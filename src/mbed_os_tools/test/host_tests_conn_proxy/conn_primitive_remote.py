@@ -28,7 +28,10 @@ class RemoteConnectorPrimitive(ConnectorPrimitive):
         self.platform_name = config.get('platform_name', None)
         self.baudrate = config.get('baudrate', DEFAULT_BAUD_RATE)
         self.image_path = config.get('image_path', None)
-        self.allocate_requirements = {"platform_name": self.platform_name}
+        self.allocate_requirements = {
+            "platform_name": self.platform_name
+            "power_on": True
+        }
 
         if self.config.get("tags"):
             self.allocate_requirements["tags"] = {}
