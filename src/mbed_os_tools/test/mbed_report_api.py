@@ -37,7 +37,7 @@ def exporter_json(test_result_ext, test_suite_properties=None):
     for target in test_result_ext.values():
         for suite in target.values():
             try:
-                suite["single_test_output"] = suite["single_test_output"].decode("unicode_escape")
+                suite["single_test_output"] = suite["single_test_output"].decode("utf-8")
             except KeyError:
                 pass
     return json.dumps(test_result_ext, indent=4)
