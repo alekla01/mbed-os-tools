@@ -40,7 +40,7 @@ def exporter_json(test_result_ext, test_suite_properties=None):
                 suite["single_test_output"] = suite["single_test_output"].decode("utf-8")
             except KeyError:
                 pass
-    return json.dumps(test_result_ext, indent=4)
+    return json.dumps(list(test_result_ext), indent=4)
 
 
 def exporter_text(test_result_ext, test_suite_properties=None):
